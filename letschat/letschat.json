@@ -1,0 +1,49 @@
+{
+    "project": "letschat",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "node",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "$URI"
+                    },
+                    "mem": 1024,
+                    "image": "sdelements/lets-chat",
+                    "instances": 1,
+                    "port_mappings": [
+                        {
+                            "container_port": 8080
+                        }
+                    ],
+                    "env": {
+                        "LCB_DATABASE_URI": "mongodb://mongodb.backend.letschat.$USERNAME/letschat"
+                    },
+                    "dependencies": [
+                        "../../backend/mongodb"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "backend",
+            "apps": [
+                {
+                    "id": "mongodb",
+                    "mem": 512,
+                    "image": "mongo",
+                    "instances": 1,
+                    "volumes": [
+                        {
+                            "container_path": "/data/db",
+                            "mode": "RW",
+                            "size": "4000MB"
+                }
+            ]
+                    }
+            ]
+        }
+    ]
+}
