@@ -1,6 +1,6 @@
 # Let's Chat
 
-Open Source Slackchat Clone based on NodeJS and MongoDB.
+Open Source Slack Clone based on NodeJS and MongoDB.
 
 ## Start it
 
