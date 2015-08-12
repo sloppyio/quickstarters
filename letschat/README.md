@@ -4,8 +4,10 @@ Open Source Slackchat Clone based on NodeJS and MongoDB.
 
 ## Start it
 
-   sloppy start letschat.json  -var=USERNAME:yourusername,URI:mydomain.sloppy.zone
+```
+sloppy start letschat.json  -var=USERNAME:yourusername,URI:mydomain.sloppy.zone
    
-   Example:
+Example:
    
-   sloppy start letschat.json  -var=USERNAME:john,URI:coolchat.sloppy.zone
+sloppy start letschat.json  -var=USERNAME:john,URI:coolchat.sloppy.zone
+```
