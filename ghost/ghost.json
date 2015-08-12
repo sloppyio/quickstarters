@@ -1,0 +1,42 @@
+{
+    "project": "ghost",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "boooh",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "$URI"
+                    },
+                    "mem": 512,
+                    "image": "ghost",
+                    "instances": 1,
+                    "volumes": [
+                        {
+                            "container_path": "/var/lib/ghost",
+                            "mode": "RW",
+                            "size": "100MB"
+                        }
+                    ],
+                    "health_checks": [
+                        {
+                            "timeout_seconds": 10,
+                            "interval_seconds": 10,
+                            "max_consecutive_failures": 3,
+                            "path": "/",
+                            "type": "HTTP",
+                            "grace_period_seconds": 3
+                        }
+                    ],
+                    "port_mappings": [
+                        {
+                            "container_port": 2368
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
