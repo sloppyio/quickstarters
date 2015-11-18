@@ -1,0 +1,32 @@
+{
+    "project": "gogs",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "gogs",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "$URI"
+                    },
+                    "mem": 512,
+                    "image": "gogs/gogs",
+                    "instances": 1,
+                    "volumes": [
+                        {
+                            "container_path": "/data",
+                            "mode": "RW",
+                            "size": "100MB"
+                        }
+                    ],
+                    "port_mappings": [
+                        {
+                            "container_port": 3000
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
