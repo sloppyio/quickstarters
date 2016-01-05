@@ -1,0 +1,59 @@
+{
+    "project": "owncloud",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "apache",
+                    "domain": {
+                        "uri": "$URI",
+                        "type": "HTTP"
+                    },
+                    "instances": 1,
+                    "mem": 1024,
+                    "image": "owncloud",
+                    "port_mappings": [
+                        {
+                            "container_port": 80
+            }
+          ],
+                    "volumes": [
+                        {
+                            "container_path": "/var/www/html",
+                            "mode": "RW",
+                            "size": "500MB"
+                                                }
+                                ],
+                    "dependencies": [
+            "../../backend/mysql"
+          ]
+        }
+      ]
+    },
+        {
+            "id": "backend",
+            "apps": [
+                {
+                    "id": "mysql",
+                    "instances": 1,
+                    "mem": 512,
+                    "image": "mysql",
+                    "env": {
+                        "MYSQL_ROOT_PASSWORD": "$ROOTPW",
+                        "MYSQL_USER": "$MYSQLUSER",
+                        "MYSQL_PASSWORD": "$MYSQLPASSWORD",
+                        "MYSQL_DATABASE": "owncloud"
+                    },
+                    "volumes": [
+                        {
+                            "container_path": "/var/lib/mysql",
+                            "mode": "RW",
+                            "size": "500MB"
+                                                }
+                                ]
+        }
+      ]
+    }
+  ]
+}
