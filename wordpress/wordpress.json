@@ -12,7 +12,7 @@
                     },
                     "instances": 1,
                     "mem": 512,
-                    "image": "wordpress",
+                    "image": "wordpress:4.2",
                     "port_mappings": [
                         {
                             "container_port": 80

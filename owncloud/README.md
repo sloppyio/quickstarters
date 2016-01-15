@@ -9,3 +9,5 @@ Example:
    
 sloppy start owncloud.json  -var=URI:ownklaut.sloppy.zone,ROOTPW:myrootpwd,MYSQLUSER:ownme,MYSQLPASSWORD:s3cure
 ```
+
+During the setup process choose MySQL as Database and fill in username and password you defined for the mysql container. The hostname is mysql.backend.owncloud.YOUR-SLOPPY-USERNAME
