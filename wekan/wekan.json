@@ -1,25 +1,25 @@
 {
-    "project": "rocketchat",
+    "project": "wekan",
     "services": [
         {
             "id": "frontend",
             "apps": [
                 {
-                    "id": "rocket",
+                    "id": "meteor",
                     "domain": {
                         "type": "HTTP",
                         "uri": "$URI"
                     },
                     "mem": 512,
-                    "image": "rocketchat/rocket.chat",
+                    "image": "mquandalle/wekan",
                     "instances": 1,
                     "port_mappings": [
                         {
-                            "container_port": 3000
+                            "container_port": 80
                         }
                     ],
                     "env": {
-                        "MONGO_URL": "mongodb://mongodb.backend.rocketchat.$USERNAME/rocketchat",
+                        "MONGO_URL": "mongodb://mongodb.backend.wekan.$USERNAME/wekan",
                         "ROOT_URL": "http://$URI"
                     },
                     "dependencies": [
@@ -35,7 +35,7 @@
                     "id": "mongodb",
                     "mem": 512,
                     "image": "mongo",
-                    "cmd": "mongod --smallfiles",
+                    "cmd": "mongod --smallfiles --oplogSize 128",
                     "instances": 1,
                     "volumes": [
                         {

@@ -34,6 +34,7 @@
                     "id": "mongodb",
                     "mem": 512,
                     "image": "mongo",
+                    "cmd": "mongod --smallfiles",
                     "instances": 1,
                     "volumes": [
                         {
@@ -42,15 +43,7 @@
                             "size": "4000MB"
                 }
             ]
-                    },
-
-{
-                    "id": "drmongo",
-                    "mem": 512,
-                    "image": "drmongo",
-                    "instances": 1,
                     }
-
             ]
         }
     ]
