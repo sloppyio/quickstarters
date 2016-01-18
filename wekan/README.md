@@ -2,7 +2,7 @@
 
 The open-source Trello-like kanban (build with Meteor) https://wekan.io
 
-[![Our roadmap is self-hosted on Wekan][screenshot]][roadmap]
+![wekan](https://wekan.io/static/screenshot.jpeg)
 
 ## Start it
 
