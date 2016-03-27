@@ -40,7 +40,7 @@
                         {
                             "container_path": "/data/db",
                             "mode": "RW",
-                            "size": "4000MB"
+                            "size": "8GB"
                 }
             ]
                     }
