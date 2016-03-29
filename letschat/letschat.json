@@ -19,7 +19,7 @@
                         }
                     ],
                     "env": {
-                        "LCB_DATABASE_URI": "mongodb://mongodb.backend.letschat.$USERNAME/letschat"
+                        "LCB_DATABASE_URI": "mongodb://mongodb.backend.letschat/letschat"
                     },
                     "dependencies": [
                         "../../backend/mongodb"
@@ -39,7 +39,6 @@
                     "volumes": [
                         {
                             "container_path": "/data/db",
-                            "mode": "RW",
                             "size": "8GB"
                 }
             ]

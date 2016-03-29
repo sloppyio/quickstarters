@@ -16,8 +16,7 @@
                     "volumes": [
                         {
                             "container_path": "/var/lib/ghost",
-                            "mode": "RW",
-                            "size": "100MB"
+                            "size": "8GB"
                         }
                     ],
                     "health_checks": [

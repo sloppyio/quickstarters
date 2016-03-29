@@ -6,10 +6,9 @@ Open Source Slack Clone based on NodeJS and MongoDB.
 
 ```
 export SLOPPY_APITOKEN=<your_key>
-sloppy start --var=USERNAME:yourusername --var=URI:mydomain.sloppy.zone letschat.json
-where USERNAME has to be your  sloppy.io username  
+sloppy start -var=URI:mydomain.sloppy.zone letschat.json
 
 Example:
    
-sloppy start --var=USERNAME:john --var=URI:coolchat.sloppy.zone letschat.json
+sloppy start -var=URI:coolchat.sloppy.zone letschat.json
 ```

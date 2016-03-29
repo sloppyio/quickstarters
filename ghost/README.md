@@ -5,9 +5,9 @@ Ghost CMS
 ## Start it
 
 ```
-sloppy start ghost.json  -var=URI:mydomain.sloppy.zone
+sloppy start -var=URI:mydomain.sloppy.zone ghost.json
    
 Example:
    
-sloppy start ghost.json  -var=URI:booh.sloppy.zone
+sloppy start -var=URI:booh.sloppy.zone ghost.json
 ```

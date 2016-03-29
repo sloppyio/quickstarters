@@ -19,7 +19,7 @@
                         }
                     ],
                     "env": {
-                        "MONGO_URL": "mongodb://mongodb.backend.wekan.$USERNAME/wekan",
+                        "MONGO_URL": "mongodb://mongodb.backend.wekan/wekan",
                         "ROOT_URL": "http://$URI"
                     },
                     "dependencies": [
@@ -40,8 +40,7 @@
                     "volumes": [
                         {
                             "container_path": "/data/db",
-                            "mode": "RW",
-                            "size": "400MB"
+                            "size": "8GB"
                 }
             ]
                     }
