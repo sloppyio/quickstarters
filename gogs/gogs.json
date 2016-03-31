@@ -16,8 +16,7 @@
                     "volumes": [
                         {
                             "container_path": "/data",
-                            "mode": "RW",
-                            "size": "100MB"
+                            "size": "8GB"
                         }
                     ],
                     "port_mappings": [

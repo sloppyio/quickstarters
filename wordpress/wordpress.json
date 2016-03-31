@@ -19,7 +19,7 @@
             }
           ],
                     "env": {
-                        "WORDPRESS_DB_HOST": "mysql.backend.wordpress.$USERNAME",
+                        "WORDPRESS_DB_HOST": "mysql.backend.wordpress",
                         "WORDPRESS_DB_USER": "$DBUSER",
                         "WORDPRESS_DB_PASSWORD": "$DBPASS"
                     },

@@ -21,8 +21,7 @@
                     "volumes": [
                         {
                             "container_path": "/var/www/html",
-                            "mode": "RW",
-                            "size": "500MB"
+                            "size": "8GB"
                                                 }
                                 ],
                     "dependencies": [
@@ -48,8 +47,7 @@
                     "volumes": [
                         {
                             "container_path": "/var/lib/mysql",
-                            "mode": "RW",
-                            "size": "500MB"
+                            "size": "8GB"
                                                 }
                                 ]
         }
