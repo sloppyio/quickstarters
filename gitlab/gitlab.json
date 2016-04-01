@@ -1,0 +1,49 @@
+{
+  "project": "gitlab",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
+        {
+          "id": "gitlab",
+          "domain": {
+            "type": "HTTP",
+            "uri": "$domain"
+          },
+          "mem": 2048,
+          "image": "gitlab/gitlab-ce",
+          "instances": 1,
+          "port_mappings": [
+            {
+              "container_port": 80
+            }
+          ],
+          "volumes": [
+            {
+              "container_path": "/etc/gitlab"
+            },
+            {
+              "container_path": "/var/opt/gitlab"
+            },
+            {
+              "container_path": "/var/log/gitlab"
+            }
+          ],
+					"env": {
+           		"GITLAB_OMNIBUS_CONFIG":"external_url 'http://$domain';"
+           },
+          "health_checks": [
+            {
+              "timeout_seconds": 10,
+              "interval_seconds": 10,
+              "max_consecutive_failures": 40,
+              "path": "/",
+              "type": "HTTP",
+              "grace_period_seconds": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
