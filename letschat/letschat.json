@@ -8,7 +8,7 @@
                     "id": "node",
                     "domain": {
                         "type": "HTTP",
-                        "uri": "coolchat.sloppy.zone"
+                        "uri": "$URI"
                     },
                     "mem": 1024,
                     "image": "sdelements/lets-chat",
