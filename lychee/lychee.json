@@ -1,5 +1,5 @@
 {
-    "project": "wordpress",
+    "project": "lychee",
     "services": [
         {
             "id": "frontend",
@@ -12,14 +12,14 @@
                     },
                     "instances": 1,
                     "mem": 512,
-                    "image": "wordpress:4.2",
+                    "image": "mikemichel/lychee",
                     "port_mappings": [
                         {
                             "container_port": 80
             }
           ],
                     "env": {
-                        "WORDPRESS_DB_HOST": "mysql.backend.wordpress",
+                        "WORDPRESS_DB_HOST": "mysql.backend.lychee.$USERNAME",
                         "WORDPRESS_DB_USER": "$DBUSER",
                         "WORDPRESS_DB_PASSWORD": "$DBPASS"
                     },
@@ -37,27 +37,12 @@
                     "instances": 1,
                     "mem": 512,
                     "image": "mysql",
-                    "port_mappings": [
-                        {
-                            "container_port": 3306
-            }
-          ],
                     "env": {
                         "MYSQL_ROOT_PASSWORD": "$DBROOT",
                         "MYSQL_USER": "$DBUSER",
                         "MYSQL_PASSWORD": "$DBPASS",
                         "MYSQL_DATABASE": "wordpress"
-                    },
-                    "health_checks": [
-                        {
-                            "port_index": 0,
-                            "type": "TCP",
-                            "grace_period_seconds": 300,
-                            "interval_seconds": 10,
-                            "timeout_seconds": 20,
-                            "max_consecutive_failures": 4
-    }
-]
+                    }
         }
       ]
     }
