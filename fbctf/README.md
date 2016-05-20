@@ -33,6 +33,8 @@ Example:
 sloppy start -var=URI:myctfhost.sloppy.zone fbctf.json
 ```
 
+Check the logs for the admin password using `sloppy logs fbctf`
+
 Note: If you want to keep your data, you need to use volumes for the mysql container!
 
 ```
