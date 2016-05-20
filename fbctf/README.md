@@ -32,3 +32,26 @@ Example:
    
 sloppy start -var=URI:myctfhost.sloppy.zone fbctf.json
 ```
+
+Note: If you want to keep your data, you need to use volumes for the mysql container!
+
+```
+(...)
+{
+  "id": "backend",
+  "apps": [
+    {
+      "id": "mysql",
+      (...)
+      "volumes": [
+        {
+          "container_path": "/var/lib/mysql",
+          "size": "8GB"
+        }
+      ],
+      (...)
+    }
+  ]
+}
+(...)
+```
