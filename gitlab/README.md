@@ -1,4 +1,4 @@
-# Gogs
+# Gitlab
 
 Gitlab - Git Server https://about.gitlab.com/
 
