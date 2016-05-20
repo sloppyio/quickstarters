@@ -22,6 +22,9 @@ The Facebook CTF is a platform to host Jeopardy and “King of the Hill” style
 
 ## Start it
 
+If you don't have an sloppy.io account, create one for free https://admin.sloppy.io
+
+
 ```
 sloppy start -var=URI:mydomain.sloppy.zone fbctf.json
    
