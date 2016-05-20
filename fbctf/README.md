@@ -1,10 +1,10 @@
-# FBCTF [![Build Status](https://travis-ci.org/facebook/fbctf.svg?branch=master)](https://travis-ci.org/facebook/fbctf)
+# FBCTF
 
 ## What is FBCTF?
 
 The Facebook CTF is a platform to host Jeopardy and “King of the Hill” style Capture the Flag competitions.
 
-<div align="center"><img src="screencapture.gif" /></div>
+<div align="center"><img src="https://github.com/facebook/fbctf/raw/master/screencapture.gif" /></div>
 
 ## How do I use FBCTF?
 
@@ -25,5 +25,5 @@ sloppy start -var=URI:mydomain.sloppy.zone fbctf.json
    
 Example:
    
-sloppy start -var=URI:myctfhost.sloppy.zone gogs.json
+sloppy start -var=URI:myctfhost.sloppy.zone fbctf.json
 ```
