@@ -32,11 +32,11 @@
                     "port_mappings": [
                         {
                             "container_port": 2368
-                        },
+                        }
+                    ],
                     "env": {
                             "URL": "$GHOST_BASE_URL"
-                    },
-                    ]
+                    }
                 }
             ]
         }
