@@ -1,27 +1,27 @@
 {
-    "project": "gogs",
-    "services": [
+    "project":"gogs",
+    "services":[
         {
-            "id": "frontend",
-            "apps": [
+            "id":"frontend",
+            "apps":[
                 {
-                    "id": "gogs",
-                    "domain": {
-                        "type": "HTTP",
-                        "uri": "$URI"
+                    "id":"gogs",
+                    "domain":{
+                        "type":"HTTP",
+                        "uri":"$URI"
                     },
-                    "mem": 512,
-                    "image": "gogs/gogs",
-                    "instances": 1,
-                    "volumes": [
+                    "mem":512,
+                    "image":"gogs/gogs",
+                    "instances":1,
+                    "volumes":[
                         {
-                            "container_path": "/data",
-                            "size": "8GB"
+                            "container_path":"/data",
+                            "size":"8GB"
                         }
                     ],
-                    "port_mappings": [
+                    "port_mappings":[
                         {
-                            "container_port": 3000
+                            "container_port":3000
                         }
                     ]
                 }

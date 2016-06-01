@@ -1,50 +1,50 @@
 {
-    "project": "lychee",
-    "services": [
+    "project":"lychee",
+    "services":[
         {
-            "id": "frontend",
-            "apps": [
+            "id":"frontend",
+            "apps":[
                 {
-                    "id": "apache",
-                    "domain": {
-                        "uri": "$URI",
-                        "type": "HTTP"
+                    "id":"apache",
+                    "domain":{
+                        "uri":"$URI",
+                        "type":"HTTP"
                     },
-                    "instances": 1,
-                    "mem": 512,
-                    "image": "mikemichel/lychee",
-                    "port_mappings": [
+                    "instances":1,
+                    "mem":512,
+                    "image":"mikemichel/lychee",
+                    "port_mappings":[
                         {
-                            "container_port": 80
-            }
-          ],
-                    "env": {
-                        "WORDPRESS_DB_HOST": "mysql.backend.lychee.$USERNAME",
-                        "WORDPRESS_DB_USER": "$DBUSER",
-                        "WORDPRESS_DB_PASSWORD": "$DBPASS"
+                            "container_port":80
+                        }
+                    ],
+                    "env":{
+                        "WORDPRESS_DB_HOST":"mysql.backend.lychee.$USERNAME",
+                        "WORDPRESS_DB_USER":"$DBUSER",
+                        "WORDPRESS_DB_PASSWORD":"$DBPASS"
                     },
-                    "dependencies": [
-            "../../backend/mysql"
-          ]
-        }
-      ]
-    },
+                    "dependencies":[
+                        "../../backend/mysql"
+                    ]
+                }
+            ]
+        },
         {
-            "id": "backend",
-            "apps": [
+            "id":"backend",
+            "apps":[
                 {
-                    "id": "mysql",
-                    "instances": 1,
-                    "mem": 512,
-                    "image": "mysql",
-                    "env": {
-                        "MYSQL_ROOT_PASSWORD": "$DBROOT",
-                        "MYSQL_USER": "$DBUSER",
-                        "MYSQL_PASSWORD": "$DBPASS",
-                        "MYSQL_DATABASE": "wordpress"
+                    "id":"mysql",
+                    "instances":1,
+                    "mem":512,
+                    "image":"mysql",
+                    "env":{
+                        "MYSQL_ROOT_PASSWORD":"$DBROOT",
+                        "MYSQL_USER":"$DBUSER",
+                        "MYSQL_PASSWORD":"$DBPASS",
+                        "MYSQL_DATABASE":"wordpress"
                     }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

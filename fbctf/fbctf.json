@@ -1,61 +1,60 @@
 {
-    "project": "fbctf",
-    "services": [
+    "project":"fbctf",
+    "services":[
         {
-            "id": "frontend",
-            "apps": [
+            "id":"frontend",
+            "apps":[
                 {
-                    "id": "fbctf",
-                    "domain": {
-                        "uri": "$URI",
-                        "type": "HTTP"
+                    "id":"fbctf",
+                    "domain":{
+                        "uri":"$URI",
+                        "type":"HTTP"
                     },
-                    "instances": 1,
-                    "mem": 512,
-                    "image": "mikemichel/fbctf",
-                    "port_mappings": [
+                    "instances":1,
+                    "mem":512,
+                    "image":"mikemichel/fbctf",
+                    "port_mappings":[
                         {
-                            "container_port": 80
-            }
-          ],
-                    "env": {
-                        "MYSQL_HOST": "mysql.backend.fbctf",
-                        "MYSQL_PORT": "3306",
-                        "MYSQL_USER": "fbctf",
-                        "MYSQL_PASSWORD": "fbctf",
-                        "MYSQL_DATABASE": "fbctf",
-                        "MEMCACHED_PORT": "11211",
-                        "SSL_SELF_SIGNED": "false"
-
+                            "container_port":80
+                        }
+                    ],
+                    "env":{
+                        "MYSQL_HOST":"mysql.backend.fbctf",
+                        "MYSQL_PORT":"3306",
+                        "MYSQL_USER":"fbctf",
+                        "MYSQL_PASSWORD":"fbctf",
+                        "MYSQL_DATABASE":"fbctf",
+                        "MEMCACHED_PORT":"11211",
+                        "SSL_SELF_SIGNED":"false"
                     },
-                    "dependencies": [
-            "../../backend/mysql"
-          ]
-        }
-      ]
-    },
-        {
-            "id": "backend",
-            "apps": [
-                {
-                    "id": "mysql",
-                    "instances": 1,
-                    "mem": 512,
-                    "image": "mysql:5.5",
-                    "env": {
-                        "MYSQL_ROOT_PASSWORD": "password",
-                        "MYSQL_USER": "fbctf",
-                        "MYSQL_PASSWORD": "fbctf",
-                        "MYSQL_DATABASE": "fbctf"
-                    }
+                    "dependencies":[
+                        "../../backend/mysql"
+                    ]
+                }
+            ]
         },
+        {
+            "id":"backend",
+            "apps":[
                 {
-                    "id": "memcache",
-                    "instances": 1,
-                    "mem": 512,
-                    "image": "memcached"
+                    "id":"mysql",
+                    "instances":1,
+                    "mem":512,
+                    "image":"mysql:5.5",
+                    "env":{
+                        "MYSQL_ROOT_PASSWORD":"password",
+                        "MYSQL_USER":"fbctf",
+                        "MYSQL_PASSWORD":"fbctf",
+                        "MYSQL_DATABASE":"fbctf"
+                    }
+                },
+                {
+                    "id":"memcache",
+                    "instances":1,
+                    "mem":512,
+                    "image":"memcached"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
