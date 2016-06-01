@@ -1,49 +1,49 @@
 {
-    "project": "rocketchat",
-    "services": [
+    "project":"rocketchat",
+    "services":[
         {
-            "id": "frontend",
-            "apps": [
+            "id":"frontend",
+            "apps":[
                 {
-                    "id": "rocket",
-                    "domain": {
-                        "type": "HTTP",
-                        "uri": "$URI"
+                    "id":"rocket",
+                    "domain":{
+                        "type":"HTTP",
+                        "uri":"$URI"
                     },
-                    "mem": 512,
-                    "image": "rocketchat/rocket.chat",
-                    "instances": 1,
-                    "port_mappings": [
+                    "mem":512,
+                    "image":"rocketchat/rocket.chat",
+                    "instances":1,
+                    "port_mappings":[
                         {
-                            "container_port": 3000
+                            "container_port":3000
                         }
                     ],
-                    "env": {
-                        "MONGO_URL": "mongodb://mongodb.backend.rocketchat/rocketchat",
-                        "ROOT_URL": "http://$URI"
+                    "env":{
+                        "MONGO_URL":"mongodb://mongodb.backend.rocketchat/rocketchat",
+                        "ROOT_URL":"http://$URI"
                     },
-                    "dependencies": [
+                    "dependencies":[
                         "../../backend/mongodb"
                     ]
                 }
             ]
         },
         {
-            "id": "backend",
-            "apps": [
+            "id":"backend",
+            "apps":[
                 {
-                    "id": "mongodb",
-                    "mem": 512,
-                    "image": "mongo",
-                    "cmd": "mongod --smallfiles",
-                    "instances": 1,
-                    "volumes": [
+                    "id":"mongodb",
+                    "mem":512,
+                    "image":"mongo",
+                    "cmd":"mongod --smallfiles",
+                    "instances":1,
+                    "volumes":[
                         {
-                            "container_path": "/data/db",
-                            "size": "8GB"
+                            "container_path":"/data/db",
+                            "size":"8GB"
+                        }
+                    ]
                 }
-            ]
-                    }
             ]
         }
     ]
