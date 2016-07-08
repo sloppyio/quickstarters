@@ -1,0 +1,55 @@
+{
+    "project": "scalaslick",
+    "services": [
+	{
+	    "id": "frontend",
+	    "apps": [
+		{
+		    "domain": {
+			"uri": "$URI",
+			"type": "HTTP"
+		    },
+		    "mem": 512,
+		    "image": "claydonkey/sloppy-slick:latest",
+		    "instances": 1,
+		    "id": "play",
+		    "health_checks": [],
+		    "volumes": [],
+		    "env": {
+			"SLICK_DB_IP_ADDRESS": "mysql.backend.scalaslick",
+			"SLICK_DB_PORT": "3306",
+			"SLICK_DB_NAME": "scalaslick",
+			"SLICK_DB_USER": "$MYSQLUSER",
+			"SLICK_DB_PASSWORD": "$MYSQLPASSWORD"
+		    },
+		    "port_mappings": [
+			{
+			    "container_port": 9000,
+			    "protocol": "tcp"
+			}
+		    ],
+		    "dependencies": [
+			"../../backend/mysql"
+		    ]
+		}
+	    ]
+	},
+	{
+	    "id": "backend",
+	    "apps": [
+		{
+		    "id": "mysql",
+		    "env": {
+			"MYSQL_ROOT_PASSWORD": "$ROOTPW",
+			"MYSQL_USER": "$MYSQLUSER",
+			"MYSQL_PASSWORD": "$MYSQLPASSWORD",
+			"MYSQL_DATABASE": "scalaslick"
+		    },
+		    "instances": 1,
+		    "mem": 512,
+		    "image": "mysql"
+		}
+	    ]
+	}
+    ]
+}
