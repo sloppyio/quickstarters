@@ -20,18 +20,14 @@ services:
       instances: 1
       mem: 512
       port: 3306
-      volumes:
-        - path: "/var/lib/mysql"
-          size: "8GB"
       env:
         - MYSQL_ROOT_PASSWORD: "$DBROOT"
         - MYSQL_USER: "$DBUSER"
         - MYSQL_PASSWORD: "$DBPASS"
         - MYSQL_DATABASE: "wordpress"
       healthchecks:
-        - path: "/"
-          type: "HTTP"
-          timeout: 10
+        - type: "TCP"
+          timeout: 20
           interval: 10
-          max_consecutive_failures: 3
-          grace_period_seconds: 3
+          max_consecutive_failures: 4
+          grace_period_seconds: 300

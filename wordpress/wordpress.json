@@ -50,7 +50,6 @@
                     },
                     "health_checks":[
                         {
-                            "port_index":0,
                             "type":"TCP",
                             "grace_period_seconds":300,
                             "interval_seconds":10,
