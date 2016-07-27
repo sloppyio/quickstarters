@@ -15,9 +15,9 @@ services:
   backend:
     mongodb:
       image: "mongo"
+      cmd: "mongod --smallfiles"
       instances: 1
       mem: 512
       volumes:
         - path: "/data/db"
           size: "8GB"
-      cmd: "mongod --smallfiles"
