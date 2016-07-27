@@ -1,0 +1,24 @@
+version: "v1"
+project: "gitlab"
+services:
+  frontend:
+    gitlab:
+      image: "gitlab/gitlab-ce"
+      instances: 1
+      mem: 1024
+      domain: $URI
+      port: 80
+      volumes:
+        - container_path: "/etc/gitlab"
+        - container_path: "/var/opt/gitlab"
+        - container_path: "/var/log/gitlab"
+      env:
+        - GITLAB_OMNIBUS_CONFIG: "external_url 'http://$URI';"
+      healthchecks:
+        -
+          timeout_seconds: 10
+          interval_seconds: 10
+          max_consecutive_failures: 40
+          path: "/"
+          type: "HTTP"
+          grace_period_seconds: 3

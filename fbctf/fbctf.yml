@@ -1,0 +1,34 @@
+version: "v1"
+project: "fbctf"
+services:
+  frontend:
+    fbctf:
+      image: "mikemichel/fbctf"
+      instances: 1
+      mem: 512
+      domain: $URI
+      port: 80
+      env:
+        - MYSQL_HOST: "mysql.backend.fbctf"
+        - MYSQL_PORT: "3306"
+        - MYSQL_USER: "fbctf"
+        - MYSQL_PASSWORD: "fbctf"
+        - MYSQL_DATABASE: "fbctf"
+        - MEMCACHED_PORT: "11211"
+        - SSL_SELF_SIGNED: "false"
+      dependencies:
+        - "../../backend/mysql"
+  backend:
+    mysql:
+      image: "mysql:5.5"
+      instances: 1
+      mem: 512
+      env:
+        - MYSQL_ROOT_PASSWORD: "password"
+        - MYSQL_USER: "fbctf"
+        - MYSQL_PASSWORD: "fbctf"
+        - MYSQL_DATABASE: "fbctf"
+    memcache:
+      instances: 1
+      mem: 512
+      image: "memcached"

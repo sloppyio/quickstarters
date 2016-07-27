@@ -1,0 +1,26 @@
+version: "v1"
+project: "lychee"
+services:
+  frontend:
+    apache:
+      image: "mikemichel/lychee"
+      instances: 1
+      mem: 512
+      domain: $URI
+      port: 80
+      env:
+        - WORDPRESS_DB_HOST: "mysql.backend.lychee.$USERNAME"
+        - WORDPRESS_DB_USER: "$DBUSER"
+        - WORDPRESS_DB_PASSWORD: "$DBPASS"
+      dependencies:
+        - "../../backend/mysql"
+  backend:
+    mysql:
+      image: "mysql"
+      instances: 1
+      mem: 512
+      env:
+        - MYSQL_ROOT_PASSWORD: "$DBROOT"
+        - MYSQL_USER: "$DBUSER"
+        - MYSQL_PASSWORD: "$DBPASS"
+        - MYSQL_DATABASE: "wordpress"

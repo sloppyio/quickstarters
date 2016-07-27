@@ -1,0 +1,37 @@
+version: "v1"
+project: "wordpress"
+services:
+  frontend:
+    apache:
+      image: "wordpress:4.2"
+      instances: 1
+      mem: 512
+      domain: "$URI"
+      port: 80
+      env:
+        - WORDPRESS_DB_HOST: "mysql.backend.wordpress"
+        - WORDPRESS_DB_USER: "$DBUSER"
+        - WORDPRESS_DB_PASSWORD: "$DBPASS"
+      dependencies:
+        - "../../backend/mysql"
+  backend:
+    mysql:
+      image: "mysql"
+      instances: 1
+      mem: 512
+      port: 3306
+      volumes:
+        - path: "/var/lib/mysql"
+          size: "8GB"
+      env:
+        - MYSQL_ROOT_PASSWORD: "$DBROOT"
+        - MYSQL_USER: "$DBUSER"
+        - MYSQL_PASSWORD: "$DBPASS"
+        - MYSQL_DATABASE: "wordpress"
+      healthchecks:
+        - path: "/"
+          type: "HTTP"
+          timeout: 10
+          interval: 10
+          max_consecutive_failures: 3
+          grace_period_seconds: 3

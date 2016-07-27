@@ -1,6 +1,6 @@
 # Wordpress
 
-The official [wordpress](https://hub.docker.com/_/wordpress/) and [mysql](https://hub.docker.com/_/mysql/) image combined for a [sloppy.io](http://sloppy.io) project. You can extend the json with more variables from the official images.
+The official [wordpress](https://hub.docker.com/_/wordpress/) and [mysql](https://hub.docker.com/_/mysql/) image combined for a [sloppy.io](https://sloppy.io) project. You can extend the json/yml with more variables from the official images.
 
 ## Start it
 

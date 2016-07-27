@@ -1,0 +1,23 @@
+version: "v1"
+project: "letschat"
+services:
+  frontend:
+    node:
+      image: "sdelements/lets-chat"
+      instances: 1
+      mem: 1024
+      domain: $URI
+      port: 8080
+      env:
+        - LCB_DATABASE_URI: "mongodb://mongodb.backend.letschat/letschat"
+      dependencies:
+        - "../../backend/mongodb"
+  backend:
+    mongodb:
+      image: "mongo"
+      instances: 1
+      mem: 512
+      volumes:
+        - path: "/data/db"
+          size: "8GB"
+      cmd: "mongod --smallfiles"

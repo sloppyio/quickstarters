@@ -1,0 +1,13 @@
+version: "v1"
+project: "gogs"
+services:
+  frontend:
+    gogs:
+      image: "gogs/gogs"
+      instances: 1
+      mem: 512
+      domain: $URI
+      port: 3000
+      volumes:
+        - path: "/data"
+          size: "8GB"

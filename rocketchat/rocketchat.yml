@@ -1,0 +1,24 @@
+version: "v1"
+project: "rocketchatone"
+services:
+  frontend:
+    rocket:
+      image: "rocketchat/rocket.chat"
+      instances: 1
+      mem: 512
+      domain: $URI
+      port: 3000
+      env:
+        - MONGO_URL: "mongodb://mongodb.backend.rocketchat/rocketchat"
+        - ROOT_URL: "http://$URI"
+      dependencies:
+        - "../../backend/mongodb"
+  backend:
+    mongodb:
+      image: "mongo"
+      cmd: "mongod --smallfiles"
+      instances: 1
+      mem: 512
+      volumes:
+        - path: "/data/db"
+          size: "8GB"

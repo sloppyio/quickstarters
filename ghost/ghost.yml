@@ -1,0 +1,22 @@
+version: "v1"
+project: "ghost"
+services:
+  frontend:
+    booh:
+      image: "ghost"
+      instances: 1
+      mem: 512
+      domain: $URI
+      port: 2368
+      volumes:
+        - container_path: "/var/lib/ghost"
+          size: "8GB"
+      env:
+        - URL: "$GHOST_BASE_URL"
+      healthchecks:
+        - timeout_seconds: 10
+          interval_seconds: 10
+          max_consecutive_failures: 3
+          path: "/"
+          type: "HTTP"
+          grace_period_seconds: 3

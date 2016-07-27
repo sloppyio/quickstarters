@@ -1,49 +1,49 @@
 {
-    "project": "wekan",
-    "services": [
+    "project":"wekan",
+    "services":[
         {
-            "id": "frontend",
-            "apps": [
+            "id":"frontend",
+            "apps":[
                 {
-                    "id": "meteor",
-                    "domain": {
-                        "type": "HTTP",
-                        "uri": "$URI"
+                    "id":"meteor",
+                    "domain":{
+                        "type":"HTTP",
+                        "uri":"$URI"
                     },
-                    "mem": 512,
-                    "image": "mquandalle/wekan",
-                    "instances": 1,
-                    "port_mappings": [
+                    "mem":512,
+                    "image":"mquandalle/wekan",
+                    "instances":1,
+                    "port_mappings":[
                         {
-                            "container_port": 80
+                            "container_port":80
                         }
                     ],
-                    "env": {
-                        "MONGO_URL": "mongodb://mongodb.backend.wekan/wekan",
-                        "ROOT_URL": "http://$URI"
+                    "env":{
+                        "MONGO_URL":"mongodb://mongodb.backend.wekan/wekan",
+                        "ROOT_URL":"http://$URI"
                     },
-                    "dependencies": [
+                    "dependencies":[
                         "../../backend/mongodb"
                     ]
                 }
             ]
         },
         {
-            "id": "backend",
-            "apps": [
+            "id":"backend",
+            "apps":[
                 {
-                    "id": "mongodb",
-                    "mem": 512,
-                    "image": "mongo",
-                    "cmd": "mongod --smallfiles --oplogSize 128",
-                    "instances": 1,
-                    "volumes": [
+                    "id":"mongodb",
+                    "mem":512,
+                    "image":"mongo",
+                    "cmd":"mongod --smallfiles --oplogSize 128",
+                    "instances":1,
+                    "volumes":[
                         {
-                            "container_path": "/data/db",
-                            "size": "8GB"
+                            "container_path":"/data/db",
+                            "size":"8GB"
+                        }
+                    ]
                 }
-            ]
-                    }
             ]
         }
     ]

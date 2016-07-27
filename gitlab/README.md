@@ -5,9 +5,9 @@ Gitlab - Git Server https://about.gitlab.com/
 ## Start it
 
 ```
-sloppy start -var domain:$DOMAIN gitlab.json  
+sloppy start -var URI:$DOMAIN gitlab.json  
 
 Example:
    
-sloppy start -var domain:gitlab.sloppy.zone gitlab.json  
+sloppy start -var URI:gitlab.sloppy.zone gitlab.json  
 ```
