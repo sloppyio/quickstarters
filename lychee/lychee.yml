@@ -3,15 +3,14 @@ project: "lychee"
 services:
   frontend:
     apache:
-      image: "mikemichel/lychee"
+      image: "mikemichel/lychee:3.1.3"
       instances: 1
       mem: 512
       domain: $URI
       port: 80
-      env:
-        - WORDPRESS_DB_HOST: "mysql.backend.lychee.$USERNAME"
-        - WORDPRESS_DB_USER: "$DBUSER"
-        - WORDPRESS_DB_PASSWORD: "$DBPASS"
+      volumes:
+        - path: "/uploads"
+          size: "8GB"
       dependencies:
         - "../../backend/mysql"
   backend:
@@ -19,8 +18,11 @@ services:
       image: "mysql"
       instances: 1
       mem: 512
+      volumes:
+        - path: "/var/lib/mysql"
+          size: "8GB"
       env:
         - MYSQL_ROOT_PASSWORD: "$DBROOT"
         - MYSQL_USER: "$DBUSER"
         - MYSQL_PASSWORD: "$DBPASS"
-        - MYSQL_DATABASE: "wordpress"
+        - MYSQL_DATABASE: "lychee"

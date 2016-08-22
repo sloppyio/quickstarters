@@ -9,7 +9,7 @@ services:
       domain: "$URI"
       port: 80
       volumes:
-        - container_path: "/var/lib/mysql"
+        - container_path: "/var/www/html"
           size: "8GB"
       dependencies:
         - "../../backend/mysql"

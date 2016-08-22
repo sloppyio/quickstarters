@@ -8,7 +8,7 @@
                     "id":"boooh",
                     "domain":{
                         "type":"HTTP",
-                        "uri":"$URI"
+                        "uri":"$GHOST_BASE_URL"
                     },
                     "mem":512,
                     "image":"ghost",

@@ -5,7 +5,7 @@ services:
     gitlab:
       image: "gitlab/gitlab-ce"
       instances: 1
-      mem: 1024
+      mem: 2048
       domain: $URI
       port: 80
       volumes:

@@ -3,10 +3,10 @@ project: "ghost"
 services:
   frontend:
     booh:
-      image: "ghost"
+      image: ghost
       instances: 1
       mem: 512
-      domain: $URI
+      domain: "$GHOST_BASE_URL"
       port: 2368
       volumes:
         - container_path: "/var/lib/ghost"

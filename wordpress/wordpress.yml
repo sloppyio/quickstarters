@@ -3,7 +3,7 @@ project: "wordpress"
 services:
   frontend:
     apache:
-      image: "wordpress:4.2"
+      image: "wordpress:4.6.0"
       instances: 1
       mem: 512
       domain: "$URI"
@@ -12,6 +12,9 @@ services:
         - WORDPRESS_DB_HOST: "mysql.backend.wordpress"
         - WORDPRESS_DB_USER: "$DBUSER"
         - WORDPRESS_DB_PASSWORD: "$DBPASS"
+      volumes:
+        - path: "/var/www/html"
+          size: "8GB"
       dependencies:
         - "../../backend/mysql"
   backend:
@@ -31,3 +34,6 @@ services:
           interval: 10
           max_consecutive_failures: 4
           grace_period_seconds: 300
+      volumes:
+        - path: "/var/lib/mysql"
+          size: "8GB"
