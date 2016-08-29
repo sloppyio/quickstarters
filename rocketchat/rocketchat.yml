@@ -12,7 +12,7 @@ services:
         - MONGO_URL: "mongodb://mongodb.backend.rocketchat/rocketchat"
         - ROOT_URL: "http://$URI"
       dependencies:
-        - "../../backend/mongodb"
+        - "../backend/mongodb"
   backend:
     mongodb:
       image: "mongo"

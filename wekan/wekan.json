@@ -23,7 +23,7 @@
                         "ROOT_URL":"http://$URI"
                     },
                     "dependencies":[
-                        "../../backend/mongodb"
+                        "../backend/mongodb"
                     ]
                 }
             ]

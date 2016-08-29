@@ -12,4 +12,4 @@ Example:
 sloppy start -var=URI:pix.sloppy.zone -var=DBUSER:mysqluser -var=DBPASS:secret -var=DBROOT:moresecret -var=DBDATABASE:lychee lychee.yml
 ```
 
-On the setup page enter mysql.backend.lychee.YOURUSERNAME
+On the setup page enter mysql.backend.lychee.YOURUSERNAME and "lychee" as the 
