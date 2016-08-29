@@ -16,7 +16,7 @@ services:
         - path: "/var/www/html"
           size: "8GB"
       dependencies:
-        - "../../backend/mysql"
+        - "../backend/mysql"
   backend:
     mysql:
       image: "mysql"

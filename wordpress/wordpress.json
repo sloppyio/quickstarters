@@ -24,7 +24,7 @@
                         "WORDPRESS_DB_PASSWORD":"$DBPASS"
                     },
                     "dependencies":[
-                        "../../backend/mysql"
+                        "../backend/mysql"
                     ]
                 }
             ]
