@@ -22,7 +22,6 @@ services:
       image: "mysql"
       instances: 1
       mem: 512
-      port: 3306
       env:
         - MYSQL_ROOT_PASSWORD: "$DBROOT"
         - MYSQL_USER: "$DBUSER"
