@@ -19,8 +19,8 @@
 			"SLICK_DB_IP_ADDRESS": "mysql.backend.scalaslick",
 			"SLICK_DB_PORT": "3306",
 			"SLICK_DB_NAME": "scalaslick",
-			"SLICK_DB_USER": "$MYSQLUSER",
-			"SLICK_DB_PASSWORD": "$MYSQLPASSWORD"
+			"SLICK_DB_USER": "$DBUSER",
+			"SLICK_DB_PASSWORD": "$DBPASS"
 		    },
 		    "port_mappings": [
 			{
@@ -40,9 +40,9 @@
 		{
 		    "id": "mysql",
 		    "env": {
-			"MYSQL_ROOT_PASSWORD": "$ROOTPW",
-			"MYSQL_USER": "$MYSQLUSER",
-			"MYSQL_PASSWORD": "$MYSQLPASSWORD",
+			"MYSQL_ROOT_PASSWORD": "$DBROOT",
+			"MYSQL_USER": "$DBUSER",
+			"MYSQL_PASSWORD": "$DBPASS",
 			"MYSQL_DATABASE": "scalaslick"
 		    },
 		    "instances": 1,

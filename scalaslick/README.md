@@ -4,11 +4,11 @@
 ## Start it
 
 ```
-sloppy start -var=URI:mydomain.sloppy.zone -var=ROOTPW:root-password-for-mysql -var=MYSQLUSER:regular-mysql-user -var=MYSQLPASSWORD:regular-mysqluser-password scalaslick.json
+sloppy start -var=URI:mydomain.sloppy.zone -var=DBROOT:root-password-for-mysql -var=DBUSER:regular-mysql-user -var=DBPASS:regular-mysqluser-password scalaslick.json
 
 Example:
-   
-sloppy start -var=URI:claydonkey-scala.sloppy.zone -var=ROOTPW:myrootpwd -var=MYSQLUSER:ownme -var=MYSQLPASSWORD:s3cure scalaslick.json
+
+sloppy start -var=URI:claydonkey-scala.sloppy.zone -var=DBROOT:myrootpwd -var=DBUSER:ownme -var=DBPASS:s3cure scalaslick.json
 ```
 
 During the setup process choose MySQL as Database and fill in username and password you defined for the mysql container. The hostname is mysql.backend.scalaslick.YOUR-SLOPPY-USERNAME
@@ -33,7 +33,7 @@ sbt compile
 ```
 sbt docker:stage
 ```
-##build (locally) 
+##build (locally)
 ```
 docker build -t claydonkey/sloppy-slick:local .
 ```
