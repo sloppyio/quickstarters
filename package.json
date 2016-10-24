@@ -1,0 +1,19 @@
+{
+  "name": "sloppyio-quickstarters",
+  "version": "1.0.0",
+  "description": "Some quickstarter projects for https://sloppy.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sloppyio/quickstarters.git"
+  },
+  "keywords": [
+    "docker",
+    "sloppy.io"
+  ],
+  "author": "sloppy.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sloppyio/quickstarters/issues"
+  },
+  "homepage": "https://github.com/sloppyio/quickstarters#readme"
+}
