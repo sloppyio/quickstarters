@@ -1,0 +1,54 @@
+{
+    "project": "couchbase",
+    "services": [
+        {
+            "id": "db",
+            "apps": [
+                {
+                    "id": "couch01",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "couch01.sloppy.zone"
+                    },
+                    "mem": 512,
+                    "image": "couchbase/server:community-4.0.0",
+                    "instances": 1,
+                    "volumes": [
+                        {
+                            "container_path": "/data",
+                            "mode": "RW",
+                            "size": "100MB"
+                        }
+                    ],
+                    "port_mappings": [
+                        {
+                            "container_port": 8091
+                        }
+                    ]
+                },
+                {
+                    "id": "couch02",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "couch02.sloppy.zone"
+                    },
+                    "mem": 512,
+                    "image": "couchbase/server:community-4.0.0",
+                    "instances": 1,
+                    "volumes": [
+                        {
+                            "container_path": "/data",
+                            "mode": "RW",
+                            "size": "100MB"
+                        }
+                    ],
+                    "port_mappings": [
+                        {
+                            "container_port": 8091
+                        }
+                    ]
+                }
+            ]
+}
+        ]
+}

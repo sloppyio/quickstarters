@@ -1,0 +1,25 @@
+# Das Problem ist netcat https://github.com/mattermost/mattermost-docker/blob/master/app/docker-entry.sh#L23
+
+version: "v1"
+project: "mattermost"
+services:
+  frontend:
+    web:
+      image: "mattermost/mattermost-prod-app"
+      instances: 1
+      mem: 512
+      domain: $URI
+      port: 80
+      env:
+        - DB_HOST: "db.backend.mattermost"
+        - PLATFORM_PORT_80_TCP_PORT: 80
+      dependencies:
+        - "../backend/db"
+  backend:
+    db:
+      image: "mattermost/mattermost-prod-db"
+      instances: 1
+      mem: 512
+      volumes:
+        - path: "/var/lib/postgresql/data"
+          size: "8GB"
