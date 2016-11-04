@@ -1,0 +1,20 @@
+version: "v1"
+project: "filebrowser-example"
+services:
+  frontend:
+    apache:
+      image: "sloppy/filebrowserapp"
+      instances: 1
+      mem: 512
+      domain: "filebrowser.sloppy.zone fileapp.sloppy.zone"
+      port: 80
+      healthchecks:
+        - type: "HTTP"
+          path: "/"
+          interval_seconds: 3
+          timeout_seconds: 5
+          max_consecutive_failures: 4
+          grace_period_seconds: 300
+      volumes:
+        - path: "/mnt"
+          size: "8GB"
