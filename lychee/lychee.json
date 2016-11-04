@@ -7,8 +7,7 @@
                 {
                     "id":"apache",
                     "domain":{
-                        "uri":"$URI",
-                        "type":"HTTP"
+                        "uri":"$URI"
                     },
                     "instances":1,
                     "mem":512,
@@ -18,13 +17,13 @@
                             "container_port":80
                         }
                     ],
-                    "env":{
-                        "WORDPRESS_DB_HOST":"mysql.backend.lychee.$USERNAME",
-                        "WORDPRESS_DB_USER":"$DBUSER",
-                        "WORDPRESS_DB_PASSWORD":"$DBPASS"
-                    },
                     "dependencies":[
-                        "../../backend/mysql"
+                        "../backend/mysql"
+                    ],
+                    "volumes": [
+                      {
+                        "container_path": "/uploads"
+                      }
                     ]
                 }
             ]
@@ -41,8 +40,13 @@
                         "MYSQL_ROOT_PASSWORD":"$DBROOT",
                         "MYSQL_USER":"$DBUSER",
                         "MYSQL_PASSWORD":"$DBPASS",
-                        "MYSQL_DATABASE":"wordpress"
-                    }
+                        "MYSQL_DATABASE":"lychee"
+                    },
+                    "volumes": [
+                      {
+                        "container_path": "/var/lib/mysql"
+                      }
+                    ]
                 }
             ]
         }

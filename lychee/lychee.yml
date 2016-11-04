@@ -12,7 +12,7 @@ services:
         - path: "/uploads"
           size: "8GB"
       dependencies:
-        - "../../backend/mysql"
+        - "../backend/mysql"
   backend:
     mysql:
       image: "mysql"

@@ -5,7 +5,7 @@ The official [wordpress](https://hub.docker.com/_/wordpress/) and [mysql](https:
 ## Start it
 
 ```
-sloppy start wordpress.json  -var=USERNAME:username -var=URI:mydomain.sloppy.zone -var=DBUSER:db-user-for-wordpress -var=DBPASS:db-password-for-wordpress -var=DBROOT:db-root-password wordpress.json 
+sloppy start -var=USERNAME:username -var=URI:mydomain.sloppy.zone -var=DBUSER:db-user-for-wordpress -var=DBPASS:db-password-for-wordpress -var=DBROOT:db-root-password wordpress.json 
 
 Example:
 

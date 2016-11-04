@@ -13,6 +13,12 @@
                     "mem":512,
                     "image":"rocketchat/rocket.chat",
                     "instances":1,
+                    "volumes":[
+                        {
+                            "container_path":"/data/db",
+                            "size":"8GB"
+                        }
+                    ],
                     "port_mappings":[
                         {
                             "container_port":3000
@@ -23,7 +29,7 @@
                         "ROOT_URL":"http://$URI"
                     },
                     "dependencies":[
-                        "../../backend/mongodb"
+                        "../backend/mongodb"
                     ]
                 }
             ]

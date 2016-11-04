@@ -25,7 +25,7 @@
                         }
                     ],
                     "dependencies":[
-                        "../../backend/mysql"
+                        "../backend/mysql"
                     ]
                 }
             ]
@@ -39,9 +39,9 @@
                     "mem":512,
                     "image":"mysql",
                     "env":{
-                        "MYSQL_ROOT_PASSWORD":"$ROOTPW",
-                        "MYSQL_USER":"$MYSQLUSER",
-                        "MYSQL_PASSWORD":"$MYSQLPASSWORD",
+                        "MYSQL_ROOT_PASSWORD":"$DBROOT",
+                        "MYSQL_USER":"$DBUSER",
+                        "MYSQL_PASSWORD":"$DBPASS",
                         "MYSQL_DATABASE":"owncloud"
                     },
                     "volumes":[

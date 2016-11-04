@@ -17,7 +17,7 @@ services:
         - MEMCACHED_PORT: "11211"
         - SSL_SELF_SIGNED: "false"
       dependencies:
-        - "../../backend/mysql"
+        - "../backend/mysql"
   backend:
     mysql:
       image: "mysql:5.5"

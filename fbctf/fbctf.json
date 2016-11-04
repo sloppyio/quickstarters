@@ -28,7 +28,7 @@
                         "SSL_SELF_SIGNED":"false"
                     },
                     "dependencies":[
-                        "../../backend/mysql"
+                        "../backend/mysql"
                     ]
                 }
             ]

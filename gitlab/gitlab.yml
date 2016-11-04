@@ -3,7 +3,7 @@ project: "gitlab"
 services:
   frontend:
     gitlab:
-      image: "gitlab/gitlab-ce"
+      image: "gitlab/gitlab-ce:8.10.8-ce.0"
       instances: 1
       mem: 2048
       domain: $URI

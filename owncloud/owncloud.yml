@@ -12,16 +12,16 @@ services:
         - container_path: "/var/www/html"
           size: "8GB"
       dependencies:
-        - "../../backend/mysql"
+        - "../backend/mysql"
   backend:
     mysql:
       image: "mysql"
       instances: 1
       mem: 512
       env:
-        - MYSQL_ROOT_PASSWORD: "$ROOTPW"
-        - MYSQL_USER: "$MYSQLUSER"
-        - MYSQL_PASSWORD: "$MYSQLPASSWORD"
+        - MYSQL_ROOT_PASSWORD: "$DBROOT"
+        - MYSQL_USER: "$DBUSER"
+        - MYSQL_PASSWORD: "$DBPASS"
         - MYSQL_DATABASE: "owncloud"
       volumes:
         - path: "/var/lib/mysql"

@@ -7,11 +7,10 @@
                 {
                     "id":"gitlab",
                     "domain":{
-                        "type":"HTTP",
-                        "uri":"$domain"
+                        "uri":"$URI"
                     },
                     "mem":2048,
-                    "image":"gitlab/gitlab-ce",
+                    "image":"gitlab/gitlab-ce:8.10.8-ce.0",
                     "instances":1,
                     "port_mappings":[
                         {
@@ -30,7 +29,7 @@
                         }
                     ],
                     "env":{
-                        "GITLAB_OMNIBUS_CONFIG":"external_url 'http://$domain';"
+                        "GITLAB_OMNIBUS_CONFIG":"external_url 'http://$URI';"
                     },
                     "health_checks":[
                         {

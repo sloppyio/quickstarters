@@ -22,7 +22,7 @@
                         "LCB_DATABASE_URI":"mongodb://mongodb.backend.letschat/letschat"
                     },
                     "dependencies":[
-                        "../../backend/mongodb"
+                        "../backend/mongodb"
                     ]
                 }
             ]
