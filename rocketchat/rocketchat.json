@@ -15,7 +15,7 @@
                     "instances":1,
                     "volumes":[
                         {
-                            "container_path":"/data/db",
+                            "container_path":"/app/uploads",
                             "size":"8GB"
                         }
                     ],
