@@ -16,5 +16,5 @@ services:
           max_consecutive_failures: 4
           grace_period_seconds: 300
       volumes:
-        - path: "/mnt"
+        - path: "/mnt/myapp"
           size: "8GB"
