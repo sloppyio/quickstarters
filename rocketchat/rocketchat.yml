@@ -6,6 +6,9 @@ services:
       image: "rocketchat/rocket.chat"
       instances: 1
       mem: 512
+      volumes:
+        - path: "/app/uploads"
+          size: "8GB"
       domain: $URI
       port: 3000
       env:
