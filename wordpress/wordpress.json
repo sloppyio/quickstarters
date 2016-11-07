@@ -1,64 +1,76 @@
 {
-    "project":"wordpress",
-    "services":[
+  "project": "wordpress",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
         {
-            "id":"frontend",
-            "apps":[
-                {
-                    "id":"apache",
-                    "domain":{
-                        "uri":"$URI",
-                        "type":"HTTP"
-                    },
-                    "instances":1,
-                    "mem":512,
-                    "image":"wordpress:4.6.1",
-                    "port_mappings":[
-                        {
-                            "container_port":80
-                        }
-                    ],
-                    "env":{
-                        "WORDPRESS_DB_HOST":"mysql.backend.wordpress",
-                        "WORDPRESS_DB_USER":"$DBUSER",
-                        "WORDPRESS_DB_PASSWORD":"$DBPASS"
-                    },
-                    "dependencies":[
-                        "../backend/mysql"
-                    ]
-                }
-            ]
-        },
-        {
-            "id":"backend",
-            "apps":[
-                {
-                    "id":"mysql",
-                    "instances":1,
-                    "mem":512,
-                    "image":"mysql",
-                    "port_mappings":[
-                        {
-                            "container_port":3306
-                        }
-                    ],
-                    "env":{
-                        "MYSQL_ROOT_PASSWORD":"$DBROOT",
-                        "MYSQL_USER":"$DBUSER",
-                        "MYSQL_PASSWORD":"$DBPASS",
-                        "MYSQL_DATABASE":"wordpress"
-                    },
-                    "health_checks":[
-                        {
-                            "type":"TCP",
-                            "grace_period_seconds":300,
-                            "interval_seconds":10,
-                            "timeout_seconds":20,
-                            "max_consecutive_failures":4
-                        }
-                    ]
-                }
-            ]
+          "id": "apache",
+          "domain": {
+            "uri": "$URI",
+            "type": "HTTP"
+          },
+          "instances": 1,
+          "mem": 512,
+          "image": "wordpress:4.6.1",
+          "port_mappings": [
+            {
+              "container_port": 80
+            }
+          ],
+          "volumes": [
+            {
+              "container_path": "/var/www/html",
+              "size": "8GB"
+            }
+          ],
+          "env": {
+            "WORDPRESS_DB_HOST": "mysql.backend.wordpress",
+            "WORDPRESS_DB_USER": "$DBUSER",
+            "WORDPRESS_DB_PASSWORD": "$DBPASS"
+          },
+          "dependencies": [
+            "../backend/mysql"
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "mysql",
+          "instances": 1,
+          "mem": 512,
+          "image": "mysql",
+          "port_mappings": [
+            {
+              "container_port": 3306
+            }
+          ],
+          "volumes": [
+            {
+              "container_path": "/var/lib/mysql",
+              "size": "8GB"
+            }
+          ],
+          "env": {
+            "MYSQL_ROOT_PASSWORD": "$DBROOT",
+            "MYSQL_USER": "$DBUSER",
+            "MYSQL_PASSWORD": "$DBPASS",
+            "MYSQL_DATABASE": "wordpress"
+          },
+          "health_checks": [
+            {
+              "type": "TCP",
+              "grace_period_seconds": 300,
+              "interval_seconds": 10,
+              "timeout_seconds": 20,
+              "max_consecutive_failures": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

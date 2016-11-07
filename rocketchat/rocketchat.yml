@@ -3,7 +3,7 @@ project: "rocketchat"
 services:
   frontend:
     rocket:
-      image: "rocketchat/rocket.chat"
+      image: "rocketchat/rocket.chat:0.45.0"
       instances: 1
       mem: 512
       volumes:
