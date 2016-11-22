@@ -7,7 +7,6 @@
                 {
                     "id":"node",
                     "domain":{
-                        "type":"HTTP",
                         "uri":"$URI"
                     },
                     "mem":1024,
