@@ -8,7 +8,6 @@
           "id": "apache",
           "domain": {
             "uri": "$URI",
-            "type": "HTTP"
           },
           "instances": 1,
           "mem": 512,
