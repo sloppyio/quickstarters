@@ -1,52 +1,52 @@
 {
-    "project":"letschat",
-    "services":[
+  "project": "letschat",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
         {
-            "id":"frontend",
-            "apps":[
-                {
-                    "id":"node",
-                    "domain":{
-                        "type":"HTTP",
-                        "uri":"$URI"
-                    },
-                    "mem":1024,
-                    "image":"sdelements/lets-chat",
-                    "instances":1,
-                    "port_mappings":[
-                        {
-                            "container_port":8080
-                        }
-                    ],
-                    "env":{
-                        "LCB_DATABASE_URI":"mongodb://mongodb.backend.letschat/letschat"
-                    },
-                    "dependencies":[
-                        "../backend/mongodb"
-                    ]
-                }
-            ]
-        },
-        {
-            "id":"backend",
-            "apps":[
-                {
-                    "id":"mongodb",
-                    "mem":512,
-                    "image":"mongo",
-                    "cmd":"mongod --smallfiles",
-                    "instances":1,
-                    "volumes":[
-                        {
-                            "container_path":"/data/db",
-                            "size":"8GB"
-                        },                        {
-                            "container_path":"/data/configdb",
-                            "size":"8GB"
-                        }
-                    ]
-                }
-            ]
+          "id": "node",
+          "domain": {
+            "uri": "$URI"
+          },
+          "mem": 1024,
+          "image": "sdelements/lets-chat",
+          "instances": 1,
+          "port_mappings": [
+            {
+              "container_port": 8080
+            }
+          ],
+          "env": {
+            "LCB_DATABASE_URI": "mongodb://mongodb.backend.letschat/letschat"
+          },
+          "dependencies": [
+            "../backend/mongodb"
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "mongodb",
+          "mem": 512,
+          "image": "mongo",
+          "cmd": "mongod --smallfiles",
+          "instances": 1,
+          "volumes": [
+            {
+              "container_path": "/data/db",
+              "size": "8GB"
+            },
+            {
+              "container_path": "/data/configdb",
+              "size": "8GB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,23 +1,23 @@
 {
-    "project": "mattermost",
-    "services": [
+  "project": "mattermost",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
         {
-            "id": "frontend",
-            "apps": [
-                {
-                    "id": "main",
-                    "image": "mattermost/platform",
-                    "mem": 1024,
-                    "domain": {
-                        "uri": "$URI"
-                    },
-                    "port_mappings": [
-                        {
-                            "container_port": 80
-                        }
-                    ]
-                }
-            ]
+          "id": "main",
+          "image": "mattermost/platform",
+          "mem": 1024,
+          "domain": {
+            "uri": "$URI"
+          },
+          "port_mappings": [
+            {
+              "container_port": 80
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }
