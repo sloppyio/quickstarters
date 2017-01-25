@@ -20,5 +20,5 @@ services:
       mem: 512
       volumes:
         - path: "/data/db"
-          size: "8GB"
+        - path: "/data/configdb"
       cmd: "mongod --smallfiles --oplogSize 128"

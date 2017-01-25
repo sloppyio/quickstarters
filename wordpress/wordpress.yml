@@ -3,7 +3,7 @@ project: "wordpress"
 services:
   frontend:
     apache:
-      image: "wordpress:4.6.0"
+      image: "wordpress:4.6.1"
       instances: 1
       mem: 512
       domain: "$URI"
