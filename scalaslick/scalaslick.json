@@ -7,7 +7,6 @@
 		{
 		    "domain": {
 			"uri": "$URI",
-			"type": "HTTP"
 		    },
 		    "mem": 512,
 		    "image": "claydonkey/sloppy-slick:latest",
