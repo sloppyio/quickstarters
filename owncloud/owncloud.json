@@ -11,7 +11,7 @@
           },
           "instances": 1,
           "mem": 1024,
-          "image": "owncloud",
+          "image": "owncloud:9.1.3",
           "port_mappings": [
             {
               "container_port": 80
@@ -19,7 +19,7 @@
           ],
           "volumes": [
             {
-              "container_path": "/var/www/html",
+              "container_path": "/var/www/html/data",
               "size": "8GB"
             }
           ],

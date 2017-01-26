@@ -10,7 +10,7 @@
                         "uri":"$GHOST_BASE_URL"
                     },
                     "mem":512,
-                    "image":"ghost",
+                    "image":"ghost:0.11.4",
                     "instances":1,
                     "volumes":[
                         {
