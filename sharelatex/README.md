@@ -2,6 +2,8 @@
 
 The easy to use, online, collaborative LaTeX editor
 
+![sharelatex](https://www.sharelatex.com/img/screen.png)
+
 https://www.sharelatex.com/
 
 ## Start it
