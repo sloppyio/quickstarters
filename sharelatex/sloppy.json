@@ -1,0 +1,76 @@
+{
+  "project": "sharelatex",
+  "services": [
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "mongodb",
+          "ssl": false,
+          "mem": 256,
+          "instances": 1,
+          "image": "mongo:3.4.1",
+          "cmd": "mongod --smallfiles",
+          "volumes": [
+            {
+              "container_path": "/data/configdb",
+              "size": "8GB"
+            },
+            {
+              "container_path": "/data/db",
+              "size": "8GB"
+            }
+          ]
+        },
+        {
+          "id": "redis",
+          "ssl": false,
+          "mem": 256,
+          "instances": 1,
+          "image": "redis:3.0.7-alpine",
+          "volumes": [
+            {
+              "container_path": "/data",
+              "size": "8GB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "apps": [
+        {
+          "id": "latex",
+          "domain": {
+            "uri": "$URI"
+          },
+          "mem": 1024,
+          "instances": 1,
+          "image": "sharelatex/sharelatex:v0.5.8",
+          "volumes": [
+            {
+              "container_path": "/var/lib/sharelatex",
+              "size": "8GB"
+            }
+          ],
+          "port_mappings": [
+            {
+              "container_port": 80
+            }
+          ],
+          "dependencies": [
+            "../backend/mongodb",
+            "../backend/redis"
+          ],
+          "env": {
+            "SHARELATEX_APP_NAME": "yay",
+            "SHARELATEX_BEHIND_PROXY": "true",
+            "SHARELATEX_MONGO_URL": "mongodb://mongodb.backend.sharelatex/latex",
+            "SHARELATEX_REDIS_HOST": "redis.backend.sharelatex"
+          }
+        }
+      ]
+    }
+  ]
+}
