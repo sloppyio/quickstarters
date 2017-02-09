@@ -35,4 +35,4 @@ Starts rethinkdb and a polling app where you can watch polls in realtime
 
 where `URI` is the free sloppy.zone domain to reach the polling app and `URI2` the domain to reach the RethinkDB admin user interface. 
 
-You can find the source code of the polling app here https://github.com/MikeMichel/rethink-poll
+You can find the source code of the polling app here https://github.com/MikeMichel/rethink-poll It is a a fork from a nice howto https://codeforgeek.com/2016/03/building-real-time-polling-app-rethinkdb-nodejs
