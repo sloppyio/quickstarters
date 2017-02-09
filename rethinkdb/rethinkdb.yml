@@ -5,7 +5,7 @@ services:
     db:
       image: "rethinkdb"
       cmd: "rethinkdb --bind all"
-      domain: $URI2
+      domain: $URI
       port: 8080
       instances: 1
       mem: 512
