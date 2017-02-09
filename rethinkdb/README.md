@@ -21,7 +21,7 @@ This repo contains 2 yml files:
 
 ## rethinkdb.yml
 
-Spins up a single rethinkdb instance. You can check the admin ui and play around. Start it using our dashboard at https://admin.sloppy.io or the sloppy.io CLI with:
+Spins up a single rethinkdb instance. You can check the admin ui and play around. Start it using our dashboard at https://admin.sloppy.io ([howto-video](https://vimeo.com/203276406)) or the sloppy.io CLI with:
 
 `sloppy start --var=URI:yourfreedomain.sloppy.zone rethinkdb.yml`
 
