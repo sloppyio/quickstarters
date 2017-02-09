@@ -1,5 +1,5 @@
 version: "v1"
-project: "rethink-poll"
+project: "rethinkdb-poll"
 services:
   frontend:
     poll:
@@ -9,7 +9,7 @@ services:
       domain: $URI
       port: 3000
       env:
-        - RETHINKDB_HOST: "db.backend.rethink-poll"
+        - RETHINKDB_HOST: "db.backend.rethinkdb-poll"
       dependencies:
         - "../backend/db"
   backend:
