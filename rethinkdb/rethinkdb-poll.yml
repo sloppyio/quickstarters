@@ -1,0 +1,26 @@
+version: "v1"
+project: "rethink-poll"
+services:
+  frontend:
+    poll:
+      image: "mikemichel/rethink-poll"
+      instances: 1
+      mem: 512
+      domain: $URI
+      port: 3000
+      env:
+        - RETHINKDB_HOST: "db.backend.rethink-poll"
+      dependencies:
+        - "../backend/db"
+  backend:
+    db:
+      image: "rethinkdb"
+      cmd: "rethinkdb --bind all"
+      domain: $URI2
+      port: 8080
+      instances: 1
+      mem: 512
+      volumes:
+        - path: "/data"
+          size: "8GB"
+
