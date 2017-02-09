@@ -1,0 +1,14 @@
+version: "v1"
+project: "rethinkdb"
+services:
+  backend:
+    db:
+      image: "rethinkdb"
+      cmd: "rethinkdb --bind all"
+      domain: $URI2
+      port: 8080
+      instances: 1
+      mem: 512
+      volumes:
+        - path: "/data"
+          size: "8GB"
