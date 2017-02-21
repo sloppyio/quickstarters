@@ -5,7 +5,7 @@ More information about flask you can find here: http://flask.pocoo.org/
 
 ## Build and push docker image
 
-docker build -t mydockerid/python-helloworld .
+docker build -t mydockerid/python-helloworld . <br />
 docker push mydockerid/python-helloworld
 
 or use
