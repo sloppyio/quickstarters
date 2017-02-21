@@ -1,0 +1,17 @@
+version: "v1"
+project: "python"
+services:
+  frontend:
+    flask:
+      image: "koboltmarky/python-helloworld"
+      instances: 1
+      mem: 64
+      domain: "flask.sloppy.zone"
+      port: 5000
+      healthchecks:
+        - timeout_seconds: 10
+          interval_seconds: 10
+          max_consecutive_failures: 3
+          path: "/"
+          type: "HTTP"
+          grace_period_seconds: 3
