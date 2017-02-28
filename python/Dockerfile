@@ -1,5 +1,4 @@
 FROM alpine:3.4
-MAINTAINER marc@sloppy.io
 
 ENV FLASK_APP /app/hello.py
 RUN apk add --update python py-pip && \

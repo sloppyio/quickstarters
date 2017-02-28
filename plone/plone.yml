@@ -1,0 +1,13 @@
+version: "v1"
+project: "plone"
+services:
+  frontend:
+    web:
+      image: "plone:5.0.6"
+      instances: 1
+      mem: 512
+      domain: "$URI"
+      port: 8080
+      volumes:
+        - container_path: "/data"
+          size: "8GB"

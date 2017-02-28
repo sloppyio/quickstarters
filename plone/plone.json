@@ -1,0 +1,30 @@
+{
+  "project": "plone",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
+        {
+          "id": "web",
+          "domain": {
+            "uri": "$URI"
+          },
+          "mem": 512,
+          "image": "plone:5.0.6",
+          "instances": 1,
+          "volumes": [
+            {
+              "container_path": "/data",
+              "size": "8GB"
+            }
+          ],
+          "port_mappings": [
+            {
+              "container_port": 8080
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
