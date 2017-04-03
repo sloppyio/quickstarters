@@ -27,12 +27,6 @@ services:
         - MYSQL_USER: "$DBUSER"
         - MYSQL_PASSWORD: "$DBPASS"
         - MYSQL_DATABASE: "wordpress"
-      healthchecks:
-        - type: "TCP"
-          timeout: 20
-          interval: 10
-          max_consecutive_failures: 4
-          grace_period_seconds: 300
       volumes:
         - path: "/var/lib/mysql"
           size: "8GB"
