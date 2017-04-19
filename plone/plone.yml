@@ -3,7 +3,7 @@ project: "plone"
 services:
   frontend:
     web:
-      image: "plone:5.0.6"
+      image: "plone:5.0.7"
       instances: 1
       mem: 512
       domain: "$URI"
