@@ -13,7 +13,7 @@ services:
         - container_path: "/var/opt/gitlab"
         - container_path: "/var/log/gitlab"
       env:
-        - GITLAB_OMNIBUS_CONFIG: "external_url 'http://$URI';"
+        - GITLAB_OMNIBUS_CONFIG: "external_url 'https://$URI';"
       healthchecks:
         -
           timeout_seconds: 10

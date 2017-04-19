@@ -19,7 +19,7 @@
           ],
           "env": {
             "MONGO_URL": "mongodb://mongodb.backend.wekan/wekan",
-            "ROOT_URL": "http://$URI"
+            "ROOT_URL": "https://$URI"
           },
           "dependencies": [
             "../backend/mongodb"
