@@ -25,7 +25,7 @@
           ],
           "env": {
             "MONGO_URL": "mongodb://mongodb.backend.rocketchat/rocketchat",
-            "ROOT_URL": "http://$URI"
+            "ROOT_URL": "https://$URI"
           },
           "dependencies": [
             "../backend/mongodb"
