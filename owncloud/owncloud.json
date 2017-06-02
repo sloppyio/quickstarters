@@ -19,7 +19,7 @@
           ],
           "volumes": [
             {
-              "container_path": "/var/www/html/data",
+              "container_path": "/var/www/html",
               "size": "8GB"
             }
           ],
