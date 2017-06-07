@@ -12,6 +12,9 @@ services:
         - LCB_DATABASE_URI: "mongodb://mongodb.backend.letschat/letschat"
       dependencies:
         - "../backend/mongodb"
+      volumes:
+        - path: "/usr/src/app/config"
+        - path: "/usr/src/app/uploads"
   backend:
     mongodb:
       image: "mongo"
