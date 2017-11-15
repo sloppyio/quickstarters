@@ -20,9 +20,12 @@ services:
         - "../backend/mysql"
   backend:
     mysql:
-      image: "mysql:5.5"
+      image: "mysql:5.7.20"
       instances: 1
       mem: 512
+      volumes:
+        - path: "/var/lib/mysql"
+          size: "8GB"
       env:
         - MYSQL_ROOT_PASSWORD: "password"
         - MYSQL_USER: "fbctf"

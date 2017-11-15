@@ -3,7 +3,7 @@ project: "rocketchat"
 services:
   frontend:
     rocket:
-      image: "rocketchat/rocket.chat:0.55.0"
+      image: "rocketchat/rocket.chat:0.59.3"
       instances: 1
       mem: 512
       volumes:
@@ -18,7 +18,7 @@ services:
         - "../backend/mongodb"
   backend:
     mongodb:
-      image: "mongo"
+      image: "mongo:3.4.10"
       cmd: "mongod --smallfiles"
       instances: 1
       mem: 512

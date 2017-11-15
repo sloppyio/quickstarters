@@ -10,11 +10,11 @@
                         "uri":"$GHOST_BASE_URL"
                     },
                     "mem":512,
-                    "image":"ghost:0.11.4",
+                    "image":"ghost:1.16.1",
                     "instances":1,
                     "volumes":[
                         {
-                            "container_path":"/var/lib/ghost",
+                            "container_path":"/var/lib/ghost/content",
                             "size":"8GB"
                         }
                     ],

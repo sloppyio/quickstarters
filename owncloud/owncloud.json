@@ -11,7 +11,7 @@
           },
           "instances": 1,
           "mem": 1024,
-          "image": "owncloud:9.1.3",
+          "image": "owncloud:10.0.3",
           "port_mappings": [
             {
               "container_port": 80
@@ -36,7 +36,7 @@
           "id": "mysql",
           "instances": 1,
           "mem": 512,
-          "image": "mysql",
+          "image": "mysql:8.0.3",
           "env": {
             "MYSQL_ROOT_PASSWORD": "$DBROOT",
             "MYSQL_USER": "$DBUSER",
