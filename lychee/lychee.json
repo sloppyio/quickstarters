@@ -40,7 +40,7 @@
                     "id":"mysql",
                     "instances":1,
                     "mem":512,
-                    "image":"mysql:8.0.3",
+                    "image":"mysql:5.7.20",
                     "env":{
                         "MYSQL_ROOT_PASSWORD":"$DBROOT",
                         "MYSQL_USER":"$DBUSER",

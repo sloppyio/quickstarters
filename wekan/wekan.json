@@ -33,7 +33,7 @@
         {
           "id": "mongodb",
           "mem": 512,
-          "image": "mongo:3.4.10",
+          "image": "mongo:3.2.17",
           "cmd": "mongod --smallfiles --oplogSize 128",
           "instances": 1,
           "volumes": [

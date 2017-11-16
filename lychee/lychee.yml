@@ -17,7 +17,7 @@ services:
         - "../backend/mysql"
   backend:
     mysql:
-      image: "mysql:8.0.3"
+      image: "mysql:5.5.40"
       instances: 1
       mem: 512
       volumes:

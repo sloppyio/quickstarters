@@ -15,7 +15,7 @@ services:
         - "../backend/mongodb"
   backend:
     mongodb:
-      image: "mongo:3.4.10"
+      image: "mongo:3.2.17"
       instances: 1
       mem: 512
       volumes:
