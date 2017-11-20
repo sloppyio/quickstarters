@@ -9,7 +9,7 @@
           "ssl": false,
           "mem": 256,
           "instances": 1,
-          "image": "mongo:3.4.1",
+          "image": "mongo:3.4.10",
           "cmd": "mongod --smallfiles",
           "volumes": [
             {
@@ -27,7 +27,7 @@
           "ssl": false,
           "mem": 256,
           "instances": 1,
-          "image": "redis:3.0.7-alpine",
+          "image": "redis:4.0.2-alpine",
           "volumes": [
             {
               "container_path": "/data",
@@ -47,7 +47,7 @@
           },
           "mem": 1024,
           "instances": 1,
-          "image": "sharelatex/sharelatex:v0.5.8",
+          "image": "sharelatex/sharelatex:v1.0.0",
           "volumes": [
             {
               "container_path": "/var/lib/sharelatex",

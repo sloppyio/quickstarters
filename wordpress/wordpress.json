@@ -11,7 +11,7 @@
           },
           "instances": 1,
           "mem": 512,
-          "image": "wordpress:4.7.4",
+          "image": "wordpress:4.8.3",
           "port_mappings": [
             {
               "container_port": 80
@@ -41,7 +41,7 @@
           "id": "mysql",
           "instances": 1,
           "mem": 512,
-          "image": "mysql:8.0.0",
+          "image": "mysql:5.7.20",
           "port_mappings": [
             {
               "container_port": 3306

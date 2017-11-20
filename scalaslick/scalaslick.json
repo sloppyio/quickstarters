@@ -23,12 +23,11 @@
           },
           "port_mappings": [
             {
-              "container_port": 9000,
-              "protocol": "tcp"
+              "container_port": 9000
             }
           ],
           "dependencies": [
-            "../../backend/mysql"
+            "../backend/mysql"
           ]
         }
       ]
@@ -44,9 +43,15 @@
             "MYSQL_PASSWORD": "$DBPASS",
             "MYSQL_DATABASE": "scalaslick"
           },
+          "volumes": [
+            {
+              "container_path": "/var/lib/mysql",
+              "size": "8GB"
+            }
+          ],
           "instances": 1,
           "mem": 512,
-          "image": "mysql"
+          "image": "mysql:5.7.20"
         }
       ]
     }

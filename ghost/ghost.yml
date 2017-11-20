@@ -3,13 +3,13 @@ project: "ghost"
 services:
   frontend:
     booh:
-      image: "ghost:0.11.4"
+      image: "ghost:1.16.1"
       instances: 1
       mem: 512
       domain: "$GHOST_BASE_URL"
       port: 2368
       volumes:
-        - container_path: "/var/lib/ghost"
+        - container_path: "/var/lib/ghost/content"
           size: "8GB"
       env:
         - URL: "$GHOST_BASE_URL"

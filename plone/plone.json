@@ -10,7 +10,7 @@
             "uri": "$URI"
           },
           "mem": 512,
-          "image": "plone:5.0.7",
+          "image": "plone:5.0.8",
           "instances": 1,
           "volumes": [
             {

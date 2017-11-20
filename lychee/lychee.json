@@ -22,7 +22,12 @@
                     ],
                     "volumes": [
                       {
-                        "container_path": "/uploads"
+                        "container_path": "/uploads",
+                        "size": "8GB"
+                      },
+                      {
+                        "container_path": "/var/www/html/",
+                        "size": "8GB"
                       }
                     ]
                 }
@@ -35,7 +40,7 @@
                     "id":"mysql",
                     "instances":1,
                     "mem":512,
-                    "image":"mysql",
+                    "image":"mysql:5.7.20",
                     "env":{
                         "MYSQL_ROOT_PASSWORD":"$DBROOT",
                         "MYSQL_USER":"$DBUSER",
