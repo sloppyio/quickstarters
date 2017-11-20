@@ -3,7 +3,7 @@ project: "wekan"
 services:
   frontend:
     meteor:
-      image: "wekanteam/wekan:v0.54"
+      image: "wekanteam/wekan:v0.55"
       instances: 1
       mem: 512
       domain: $URI
