@@ -1,0 +1,17 @@
+version: "v1"
+project: "go"
+services:
+  frontend:
+    httprouter:
+      image: "koboltmarky/go-helloworld"
+      instances: 1
+      mem: 64
+      domain: "go.sloppy.zone"
+      port: 8080
+      healthchecks:
+        - timeout_seconds: 10
+          interval_seconds: 10
+          max_consecutive_failures: 3
+          path: "/"
+          type: "HTTP"
+          grace_period_seconds: 3
