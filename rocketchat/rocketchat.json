@@ -10,7 +10,7 @@
             "uri": "$URI"
           },
           "mem": 512,
-          "image": "rocketchat/rocket.chat:0.59.3",
+          "image": "rocketchat/rocket.chat:0.61.0",
           "instances": 1,
           "volumes": [
             {
