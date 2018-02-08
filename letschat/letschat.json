@@ -22,6 +22,16 @@
           },
           "dependencies": [
             "../backend/mongodb"
+          ],
+          "volumes": [
+            {
+              "container_path": "/usr/src/app/config",
+              "size": "8GB"
+            },
+            {
+              "container_path": "/usr/src/app/uploads",
+              "size": "8GB"
+            }
           ]
         }
       ]
