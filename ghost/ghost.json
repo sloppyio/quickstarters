@@ -7,7 +7,7 @@
                 {
                     "id":"boooh",
                     "domain":{
-                        "uri":"$GHOST_BASE_URL"
+                        "uri":"$URI"
                     },
                     "mem":512,
                     "image":"ghost:1.16.1",
@@ -34,7 +34,7 @@
                         }
                     ],
                     "env":{
-                        "URL":"$GHOST_BASE_URL"
+                        "URL":"$URI"
                     }
                 }
             ]
