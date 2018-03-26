@@ -1,0 +1,36 @@
+version: "v1"
+project: "testlink"
+services:
+  frontend:
+    apache:
+      image: "bitnami/testlink:1"
+      instances: 1
+      mem: 512
+      domain: "$URI"
+      port: 80
+      env:
+        - MARIADB_HOST: "mysql.backend.testlink"
+        - TESTLINK_USERNAME: "$TESTLINK_USERNAME"
+        - TESTLINK_PASSWORD: "$TESTLINK_PASSWORD"
+        - MARIADB_ROOT_PASSWORD: "$DBROOT"
+        - TESTLINK_DATABASE_USER: "$DBUSER"
+        - TESTLINK_DATABASE_PASSWORD: "$DBPASS"
+        - TESTLINK_DATABASE_NAME: "testlink"
+      volumes:
+        - path: "/bitnami/testlink/upload_area"
+          size: "8GB"
+      dependencies:
+        - "../backend/mysql"
+  backend:
+    mysql:
+      image: "mysql:5.7.20"
+      instances: 1
+      mem: 512
+      env:
+        - MYSQL_ROOT_PASSWORD: "$DBROOT"
+        - MYSQL_USER: "$DBUSER"
+        - MYSQL_PASSWORD: "$DBPASS"
+        - MYSQL_DATABASE: "testlink"
+      volumes:
+        - path: "/var/lib/mysql"
+          size: "8GB"
