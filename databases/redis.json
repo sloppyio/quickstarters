@@ -1,0 +1,22 @@
+{
+  "project": "redis",
+  "services": [
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "redis",
+          "mem": 128,
+          "image": "redis",
+          "instances": 1,
+          "volumes": [
+            {
+              "container_path": "/data",
+              "size": "8GB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

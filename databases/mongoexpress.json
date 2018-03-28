@@ -1,0 +1,27 @@
+{
+  "project": "mongoexpress",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
+        {
+          "id": "mongoexpress",
+          "domain": {
+            "uri": "$URI"
+          },
+          "mem": 128,
+          "image": "mongo-express",
+          "instances": 1,
+          "port_mappings": [
+            {
+              "container_port": 8081
+            }
+          ],
+          "env": {
+            "ME_CONFIG_MONGODB_SERVER": "Set hostname for MongoDB here"
+          }
+        }
+      ]
+    }
+  ]
+}

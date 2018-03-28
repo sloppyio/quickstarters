@@ -1,0 +1,27 @@
+{
+  "project": "mongodb",
+  "services": [
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "mongodb",
+          "mem": 512,
+          "image": "mongo:3.4.10",
+          "cmd": "mongod --smallfiles",
+          "instances": 1,
+          "volumes": [
+            {
+              "container_path": "/data/db",
+              "size": "8GB"
+            },
+            {
+              "container_path": "/data/configdb",
+              "size": "8GB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
