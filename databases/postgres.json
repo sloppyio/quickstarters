@@ -1,0 +1,26 @@
+{
+  "project": "postgres",
+  "services": [
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "postgres",
+          "instances": 1,
+          "mem": 512,
+          "image": "postgres:9.6.8",
+          "volumes": [
+            {
+              "container_path": "/var/lib/postgresql/data",
+              "size": "8GB"
+            }
+          ],
+          "env": {
+            "POSTGRES_USER": "$DBUSER",
+            "POSTGRES_PASSWORD": "$DBPASS"
+          }
+        }
+      ]
+    }
+  ]
+}

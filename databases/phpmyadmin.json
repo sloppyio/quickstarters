@@ -1,0 +1,27 @@
+{
+  "project": "phpmyadmin",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
+        {
+          "id": "phpmyadmin",
+          "domain": {
+            "uri": "$URI"
+          },
+          "instances": 1,
+          "mem": 128,
+          "image": "phpmyadmin/phpmyadmin",
+          "port_mappings": [
+            {
+              "container_port": 80
+            }
+          ],
+          "env": {
+            "PMA_HOST": "Set hostname for MySQL or MariaDB here"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "project": "mysql",
+  "services": [
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "mysql",
+          "instances": 1,
+          "mem": 512,
+          "image": "mysql:5.7.20",
+          "port_mappings": [
+            {
+              "container_port": 3306
+            }
+          ],
+          "volumes": [
+            {
+              "container_path": "/var/lib/mysql",
+              "size": "8GB"
+            }
+          ],
+          "env": {
+            "MYSQL_ROOT_PASSWORD": "$DBROOT",
+            "MYSQL_USER": "$DBUSER",
+            "MYSQL_PASSWORD": "$DBPASS",
+            "MYSQL_DATABASE": "default"
+          },
+          "health_checks": [
+            {
+              "type": "TCP",
+              "grace_period_seconds": 300,
+              "interval_seconds": 10,
+              "timeout_seconds": 20,
+              "max_consecutive_failures": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
