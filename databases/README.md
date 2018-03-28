@@ -1,6 +1,6 @@
 # Sloppy.io Databases
 
-##Tutorials
+## Tutorials
 
 ### Managing Databases on Sloppy
 [How to manage databases on Sloppy.io](https://kb.sloppy.io/getting-started/how-to-tutorials/managing-databases-on-sloppyio)
