@@ -1,9 +1,9 @@
 # Sloppy.io Databases
 
->used for Sloppy.io UI edit project dropdown https://sloppy.io
-
 ##Tutorials
 
+### Managing Databases on Sloppy
+[How to manage databases on Sloppy.io](https://kb.sloppy.io/getting-started/how-to-tutorials/managing-databases-on-sloppyio)
 
 ### MySQL & phpMyAdmin
 [How to add MySQL + phpMyAdmin to your Sloppy.io project](https://kb.sloppy.io/tutorials/setting-up-mysql-and-phpmyadmin-on-sloppyio)
