@@ -3,11 +3,11 @@ project: "wekan"
 services:
   frontend:
     meteor:
-      image: "wekanteam/wekan:v0.56"
+      image: "wekanteam/wekan:v2.23"
       instances: 1
       mem: 512
       domain: $URI
-      port: 80
+      port: 8080
       env:
         - MONGO_URL: "mongodb://mongodb.backend.wekan/wekan"
         - ROOT_URL: "https://$URI"
@@ -15,10 +15,10 @@ services:
         - "../backend/mongodb"
   backend:
     mongodb:
-      image: "mongo:3.2.17"
+      image: "mongo:4.0.4"
       instances: 1
       mem: 512
       volumes:
         - path: "/data/db"
         - path: "/data/configdb"
-      cmd: "mongod --smallfiles --oplogSize 128"
+      cmd: "mongod --smallfiles --oplogSize 128 --bind_ip_all"
