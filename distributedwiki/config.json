@@ -1,0 +1,31 @@
+{
+  "project": "demo",
+  "services": [
+    {
+      "id": "demo",
+      "apps": [
+        {
+          "id": "demo",
+          "domain": {
+              "uri":  "$URI",
+	      "redirectHttps": true,
+	      "hstsHeader": false
+          },
+	    "ssl": true,
+          "image": "pythonlinks/distributedwiki",
+          "port_mappings": [
+            {
+              "container_port": 80
+            }
+          ],
+          "volumes":[ 
+               {
+               "container_path":"/app/data",
+               "size": "8GB"
+               }
+               ]
+        }  
+      ]
+    }
+  ]
+}
