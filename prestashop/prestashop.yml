@@ -3,7 +3,7 @@ project: "prestashop"
 services:
   frontend:
     apache:
-      image: "prestashop/prestashop:1.7.2.4"
+      image: "prestashop/prestashop:1.7"
       instances: 1
       mem: 1024
       domain: "$URI"
@@ -26,9 +26,9 @@ services:
         - "../backend/mysql"
   backend:
     mysql:
-      image: "mysql:5.7.20"
+      image: "mysql:5.7"
       instances: 1
-      mem: 512
+      mem: 1024
       env:
         - MYSQL_ROOT_PASSWORD: "$DBROOT"
         - MYSQL_USER: "$DBUSER"

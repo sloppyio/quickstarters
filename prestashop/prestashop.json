@@ -1,0 +1,68 @@
+{
+  "project": "prestashop",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
+        {
+          "id": "apache",
+          "image": "prestashop/prestashop:1.7",
+          "instances": 1,
+          "mem": 1024,
+          "domain": {
+            "uri": "$URI"
+          },
+          "port_mappings": [
+            {
+              "container_port": 80
+            }
+          ],
+          "env": {
+            "DB_SERVER": "mysql.backend.prestashop",
+            "DB_USER": "$DBUSER",
+            "DB_PASSWD": "$DBPASS",
+            "PS_DOMAIN": "$URI",
+            "ADMIN_MAIL": "$ADMINMAIL",
+            "ADMIN_PASSWD": "$ADMINPASSWD",
+            "PS_INSTALL_AUTO": "1",
+            "PS_ERASE_DB": "0",
+            "PS_LANGUAGE": "en",
+            "PS_COUNTRY": "GB"
+          },
+          "volumes": [
+            {
+              "container_path": "/var/www/html",
+              "size": "8GB"
+            }
+          ],
+          "dependencies": [
+            "../backend/mysql"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "apps": [
+        {
+          "id": "mysql",
+          "image": "mysql:5.7",
+          "instances": 1,
+          "mem": 1024,
+          "env": {
+            "MYSQL_ROOT_PASSWORD": "$DBROOT",
+            "MYSQL_USER": "$DBUSER",
+            "MYSQL_PASSWORD": "$DBPASS",
+            "MYSQL_DATABASE": "prestashop"
+          },
+          "volumes": [
+            {
+              "container_path": "/var/lib/mysql",
+              "size": "8GB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
