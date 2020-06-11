@@ -3,7 +3,7 @@ project: "ghost"
 services:
   frontend:
     booh:
-      image: "ghost:1.16.1"
+      image: "ghost:3.19"
       instances: 1
       mem: 512
       domain: "$URI"
@@ -12,7 +12,7 @@ services:
         - container_path: "/var/lib/ghost/content"
           size: "8GB"
       env:
-        - URL: "$URI"
+        - URL: "https://$URI"
       healthchecks:
         - timeout_seconds: 10
           interval_seconds: 10
