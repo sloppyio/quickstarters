@@ -5,12 +5,12 @@
             "id":"frontend",
             "apps":[
                 {
-                    "id":"boooh",
+                    "id":"ghost",
                     "domain":{
                         "uri":"$URI"
                     },
                     "mem":512,
-                    "image":"ghost:1.16.1",
+                    "image":"ghost:3.19",
                     "instances":1,
                     "volumes":[
                         {
@@ -34,7 +34,7 @@
                         }
                     ],
                     "env":{
-                        "URL":"$URI"
+                        "url":"https://$URI"
                     }
                 }
             ]
