@@ -11,7 +11,7 @@
           },
           "instances": 1,
           "mem": 512,
-          "image": "wordpress:5.4",
+          "image": "wordpress:5.5",
           "port_mappings": [
             {
               "container_port": 80
