@@ -10,7 +10,7 @@
             "uri": "$URI"
           },
           "mem": 512,
-          "image": "wekanteam/wekan:v2.23",
+          "image": "wekanteam/wekan:v4.53",
           "instances": 1,
           "port_mappings": [
             {
@@ -33,7 +33,7 @@
         {
           "id": "mongodb",
           "mem": 512,
-          "image": "mongo:4.0.4",
+          "image": "mongo:4.4.1-bionic",
           "cmd": "mongod --smallfiles --oplogSize 128 --bind_ip_all",
           "instances": 1,
           "volumes": [
