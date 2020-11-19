@@ -1,0 +1,30 @@
+{
+    "project": "nextcloud",
+    "services": [
+      {
+        "id": "frontend",
+        "apps": [
+          {
+            "id": "apache",
+            "domain": {
+              "uri": "$URI"
+            },
+            "instances": 1,
+            "mem": 1024,
+            "image": "nextcloud:latest",
+            "port_mappings": [
+              {
+                "container_port": 80
+              }
+            ],
+            "volumes": [
+              {
+                "container_path": "/var/www/html",
+                "size": "8GB"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
