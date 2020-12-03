@@ -3,7 +3,7 @@ project: "wordpress"
 services:
   frontend:
     apache:
-      image: "wordpress:5.4"
+      image: "wordpress:5.5"
       instances: 1
       mem: 512
       domain: "$URI"
@@ -19,7 +19,7 @@ services:
         - "../backend/mysql"
   backend:
     mysql:
-      image: "mysql:5.7"
+      image: "mysql:8.0.22"
       instances: 1
       mem: 512
       env:

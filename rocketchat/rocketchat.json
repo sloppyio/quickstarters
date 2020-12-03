@@ -10,7 +10,7 @@
             "uri": "$URI"
           },
           "mem": 512,
-          "image": "rocketchat/rocket.chat:0.62.1",
+          "image": "rocketchat/rocket.chat:latest",
           "instances": 1,
           "volumes": [
             {
@@ -39,7 +39,7 @@
         {
           "id": "mongodb",
           "mem": 512,
-          "image": "mongo:3.6.3",
+          "image": "mongo:4.0.4",
           "instances": 1,
           "volumes": [
             {
