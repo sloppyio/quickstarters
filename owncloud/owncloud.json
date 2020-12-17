@@ -11,7 +11,7 @@
           },
           "instances": 1,
           "mem": 1024,
-          "image": "owncloud:10.0.3",
+          "image": "owncloud:10.0.10",
           "port_mappings": [
             {
               "container_port": 80
