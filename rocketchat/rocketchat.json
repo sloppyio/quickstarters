@@ -39,7 +39,8 @@
         {
           "id": "mongodb",
           "mem": 512,
-          "image": "mongo:4.0.4",
+          "image": "mongo:4.0",
+          "cmd": "mongod --smallfiles --replSet rs0 --oplogSize 128 --bind_ip_all",
           "instances": 1,
           "volumes": [
             {
