@@ -9,7 +9,7 @@
           "domain": {
             "uri": "$URI"
           },
-          "mem": 512,
+          "mem": 768,
           "image": "rocketchat/rocket.chat:latest",
           "instances": 1,
           "volumes": [
