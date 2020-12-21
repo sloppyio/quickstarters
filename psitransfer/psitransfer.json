@@ -1,0 +1,34 @@
+{
+  "project": "psitransfer",
+  "services": [
+    {
+      "id": "frontend",
+      "apps": [
+        {
+          "id": "psitransfer",
+          "image": "psitrax/psitransfer",
+          "instances": 1,
+          "mem": 512,
+          "domain": {
+            "uri": "$URI"
+          },
+          "ssl": true,
+          "port_mappings": [
+            {
+              "container_port": 3000
+            }
+          ],
+          "env": {
+            "PSITRANSFER_ADMIN_PASS": "$ADMIN_PASSWORD"
+          },
+          "volumes": [
+            {
+              "container_path": "/data",
+              "size": "8GB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
