@@ -26,3 +26,7 @@ Example:
 
 sloppy start -var=URI:fd4711.sloppy.zone flowdirector.json
 ```
+
+When the container is started, you can navigate with your browser to the URI which you specified on deployment.
+
+On the dashboard press START, select System app and login with user admin, password changeme. This is the default password after installation.
