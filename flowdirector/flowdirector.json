@@ -1,0 +1,45 @@
+{
+  "project": "flowdirector",
+  "services": [
+    {
+      "id": "flowdirector",
+      "apps": [
+        {
+          "id": "fd",
+          "image": "flowdirector/fdserver:latest",
+          "instances": 1,
+          "mem": 2048,
+          "domain": {
+            "redirectHttps": true,
+            "uri": "$URI"
+          },
+          "ssl": true,
+          "port_mappings": [
+            {
+              "container_port": 8081
+            }
+          ],
+          "env": {
+            "FD_HEAP": "2048M",
+            "MUX_ENABLED": "true",
+            "MUX_PORT": "8081",
+            "MUX_HTTP_PORT": "8080",
+            "MUX_AMQP_PORT": "-1",
+            "MUX_JMS_PORT": "-1",
+            "MUX_MQTT_PORT": "-1",
+            "MUX_ROUTING_PORT": "-1"
+          },
+          "volumes": [
+            {
+              "container_path": "/flowdirector",
+              "size": "8GB"
+            }
+          ],
+          "health_checks": [
+          ],
+          "logging": null
+        }
+      ]
+    }
+  ]
+}
